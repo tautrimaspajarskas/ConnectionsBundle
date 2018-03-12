@@ -9,23 +9,23 @@ parameters:
 
 services:
     ongr_connections.mapping_listener:
-        class: %ongr_connections.mapping_listener.class%
+        class: '%ongr_connections.mapping_listener.class%'
         tags:
             - { name: doctrine.event_listener, event: loadClassMetadata }
 
     ongr_connections.pipeline.abstract:
-        class: %ongr_connections.pipeline.abstract.class%
+        class: '%ongr_connections.pipeline.abstract.class%'
         abstract: true
         calls:
-            - [ setDispatcher, [ @event_dispatcher ] ]
+            - [ setDispatcher, [ '@event_dispatcher' ] ]
 
     ongr_connections.sync_task_complete_blocker_listener:
-        class: %ongr_connections.sync_task_complete_blocker_listener.class%
+        class: '%ongr_connections.sync_task_complete_blocker_listener.class%'
         tags:
             - { name: kernel.event_listener, event: ongr_connections.sync_task_complete, method: handleEvent }
 
     ongr_connections.pipeline_factory:
-        class: %ongr_connections.pipeline_factory.class%
+        class: '%ongr_connections.pipeline_factory.class%'
         calls:
-            - [ setDispatcher, [ @event_dispatcher ] ]
-            - [ setClassName, [ %ongr_connections.pipeline_factory.pipeline_class% ] ]
+            - [ setDispatcher, [ '@event_dispatcher' ] ]
+            - [ setClassName, [ '%ongr_connections.pipeline_factory.pipeline_class%' ] ]

@@ -5,18 +5,18 @@ parameters:
 
 services:
     ongr_connections.sync.extractor.doctrine_extractor:
-        class: %ongr_connections.extractor.doctrine_extractor.class%
+        class: '%ongr_connections.extractor.doctrine_extractor.class%'
         calls:
-            - [ setExtractionCollection, [ @ongr_connections.sync.extraction_collection ] ]
-            - [ setConnection, [ @database_connection ] ]
-            - [ setStorageFacility, [ @ongr_connections.sync.sync_storage ] ]
-            - [ setContainer, [ @service_container ] ]
+            - [ setExtractionCollection, [ '@ongr_connections.sync.extraction_collection' ] ]
+            - [ setConnection, [ '@database_connection' ] ]
+            - [ setStorageFacility, [ '@ongr_connections.sync.sync_storage' ] ]
+            - [ setContainer, [ '@service_container' ] ]
 
     ongr_connections.sync.extractor.passthrough_extractor:
-        class: %ongr_connections.extractor.passthrough_extractor.class%
+        class: '%ongr_connections.extractor.passthrough_extractor.class%'
         calls:
-            - [ setStorageFacility, [ @ongr_connections.sync.sync_storage ] ]
-            - [ setContainer, [ @service_container ] ]
+            - [ setStorageFacility, [ '@ongr_connections.sync.sync_storage' ] ]
+            - [ setContainer, [ '@service_container' ] ]
 
     ongr_connections.sync.extraction_collection:
-        class: %ongr_connections.sync.extraction_collection.class%
+        class: '%ongr_connections.sync.extraction_collection.class%'

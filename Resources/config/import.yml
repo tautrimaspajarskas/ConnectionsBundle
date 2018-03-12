@@ -12,35 +12,35 @@ parameters:
 
 services:
     ongr_connections.import_service:
-        class: %ongr_connections.import_service.class%
+        class: '%ongr_connections.import_service.class%'
         calls:
-            - [ setPipelineFactory, [ @ongr_connections.pipeline_factory ] ]
+            - [ setPipelineFactory, [ '@ongr_connections.pipeline_factory' ] ]
 
     ongr_connections.import.source:
         abstract: true
-        class: %ongr_connections.import.source.class%
+        class: '%ongr_connections.import.source.class%'
 
     ongr_connections.import.modifier:
         abstract: true
 
     ongr_connections.import.consumer:
         abstract: true
-        class: %ongr_connections.import.consumer.class%
+        class: '%ongr_connections.import.consumer.class%'
 
     ongr_connections.import.finish:
         abstract: true
-        class: %ongr_connections.import.finish.class%
+        class: '%ongr_connections.import.finish.class%'
 
     ongr_connections.sync.execute_service:
-        class: %ongr_connections.sync.execute_service.class%
+        class: '%ongr_connections.sync.execute_service.class%'
         calls:
-            - [ setPipelineFactory, [ @ongr_connections.pipeline_factory ] ]
+            - [ setPipelineFactory, [ '@ongr_connections.pipeline_factory' ] ]
 
     ongr_connections.sync.execute.source:
-        class: %ongr_connections.sync.execute.source.class%
+        class: '%ongr_connections.sync.execute.source.class%'
 
     ongr_connections.sync.execute.consumer:
-        class: %ongr_connections.sync.execute.consumer.class%
+        class: '%ongr_connections.sync.execute.consumer.class%'
 
     ongr_connections.sync.execute.finish:
-        class: %ongr_connections.sync.execute.finish.class%
+        class: '%ongr_connections.sync.execute.finish.class%'

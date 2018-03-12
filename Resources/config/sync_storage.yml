@@ -8,14 +8,14 @@ parameters:
 
 services:
     ongr_connections.sync.storage_manager.mysql_storage_manager:
-        class: %ongr_connections.sync.storage_manager.mysql_storage_manager.class%
+        class: '%ongr_connections.sync.storage_manager.mysql_storage_manager.class%'
         # Arguments are injected in bundle Extension class.
 
     ongr_connections.sync.sync_storage:
-        class: %ongr_connections.sync.sync_storage.class%
+        class: '%ongr_connections.sync.sync_storage.class%'
         # Arguments are injected in bundle Extension class.
 
     ongr_connections.sync.data_sync_service:
-        class: %ongr_connections.sync.data_sync_service.class%
+        class: '%ongr_connections.sync.data_sync_service.class%'
         calls:
-            - [ setPipelineFactory, [ @ongr_connections.pipeline_factory ] ]
+            - [ setPipelineFactory, [ '@ongr_connections.pipeline_factory' ] ]
